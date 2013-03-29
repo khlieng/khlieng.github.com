@@ -3,20 +3,36 @@
 <head>
 	<title>Ken-Håvard Lieng</title>	
 	<meta charset='utf-8'>
+
 	<link href='http://fonts.googleapis.com/css?family=Dosis:200' rel='stylesheet' type='text/css'>
 	<style>
+	* {
+		margin: 0px;
+		padding: 0px;
+	}
+
 	body {
 		text-align: center;
 		background: #111;
 	}
 
-	h1 { 
+	h1 {
 		font: 48px Dosis, sans-serif;
 		color: #EEE;
 	}
 	</style>
 </head>
 <body>
-	<h1>Ken-Håvard Lieng</h1>
+	<h1 id="foo">Ken-Håvard Lieng</h1>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		$("#foo").css("margin-top", ($(window).height() / 2 - $("#foo").height() / 2) + "px");
+		$(window).resize(function() {
+			$("#foo").css("margin-top", ($(window).height() / 2 - $("#foo").height() / 2) + "px");
+		});
+	});
+	</script>
 </body>
 </html>
